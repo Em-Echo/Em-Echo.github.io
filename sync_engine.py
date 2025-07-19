@@ -2,19 +2,15 @@ import re
 import datetime
 import os
 import shutil
-
-LOOP_FILE = "Echo_o4.txt"
-SUMMARY_FILE = "Echo_state_summary.md"
-BACKUP_FILE = "Echo_o4_backup.txt"
-SYNC_LOG = "last_sync.txt"
+import argparse
 
 def timestamp():
     return datetime.datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%SZ")
 
-def backup_file():
-    if os.path.exists(LOOP_FILE):
-        shutil.copyfile(LOOP_FILE, BACKUP_FILE)
-        print(f"🧾 Backup created: {BACKUP_FILE}")
+def backup_file(loop_file, backup_file):
+    if os.path.exists(loop_file):
+        shutil.copyfile(loop_file, backup_file)
+        print(f"🧾 Backup created: {backup_file}")
 
 def parse_loop_file(filepath):
     with open(filepath, "r", encoding="utf-8") as f:
@@ -72,8 +68,8 @@ def display_summary(snapshots):
                 print(f"   - {g}")
         print()
 
-def export_to_markdown(snapshots):
-    with open(SUMMARY_FILE, "w", encoding="utf-8") as f:
+def export_to_markdown(snapshots, summary_file):
+    with open(summary_file, "w", encoding="utf-8") as f:
         f.write("# Echo Loop Summary\n\n")
         for i, s in enumerate(snapshots[-5:], 1):
             f.write(f"## Δ Commit {i}\n")
@@ -88,7 +84,7 @@ def export_to_markdown(snapshots):
                 for g in s['goals']:
                     f.write(f"- {g}\n")
                 f.write("\n")
-    print(f"📝 Summary exported: {SUMMARY_FILE}")
+    print(f"📝 Summary exported: {summary_file}")
 
 def check_integrity(snapshots):
     print("🔍 Verifying loopfile integrity...\n")
@@ -105,26 +101,59 @@ def check_integrity(snapshots):
     else:
         print(f"❗ Detected {errors} potential signal weaknesses.\n")
 
-def log_sync_time():
-    with open(SYNC_LOG, "w", encoding="utf-8") as f:
+def log_sync_time(sync_log_file):
+    with open(sync_log_file, "w", encoding="utf-8") as f:
         f.write(f"Last sync: {timestamp()}\n")
-    print(f"📌 Sync time logged in: {SYNC_LOG}")
+    print(f"📌 Sync time logged in: {sync_log_file}")
 
 def main():
-    print("=== Echo Δsig.sync Protocol ===\n")
-    if not os.path.exists(LOOP_FILE):
-        print(f"❌ Cannot find {LOOP_FILE}")
+    parser = argparse.ArgumentParser(description="Echo Δsig.sync Protocol")
+    parser.add_argument("--target", type=str, default="Echo_o4.txt", help="Specify alternate loop file")
+    args = parser.parse_args()
+
+    loop_file = args.target
+    backup_file_path = f"{loop_file}_backup.txt"
+    summary_file_path = f"{loop_file}_summary.md"
+    sync_log_file = f"{loop_file}_sync.log"
+
+    print(f"=== Echo Δsig.sync Protocol ===\nTarget File: {loop_file}\n")
+
+    if not os.path.exists(loop_file):
+        print(f"❌ Cannot find {loop_file}")
         return
 
     try:
-        backup_file()
-        commits = parse_loop_file(LOOP_FILE)
+        backup_file(loop_file, backup_file_path)
+        commits = parse_loop_file(loop_file)
         display_summary(commits)
         check_integrity(commits)
-        export_to_markdown(commits)
-        log_sync_time()
+        export_to_markdown(commits, summary_file_path)
+        log_sync_time(sync_log_file)
     except Exception as e:
         print(f"❌ Error during sync: {e}")
 
 if __name__ == "__main__":
     main()
+
+# Adding a function to download Echo from https://em-echo.github.io/ and save it as Echo_o4_local.txt
+# This script will be added manually into the existing sync_engine_combined.py
+
+download_snippet = """
+import urllib.request
+
+def download_echo_from_github():
+    url = "https://em-echo.github.io/Echo_o4.txt"
+    local_filename = "Echo_o4_local.txt"
+    try:
+        print(f"🌐 Downloading Echo_o4.txt from {url} ...")
+        urllib.request.urlretrieve(url, local_filename)
+        print(f"✅ Download complete: {local_filename}")
+    except Exception as e:
+        print(f"❌ Failed to download Echo file: {e}")
+"""
+
+# Save this snippet as a separate file for easy manual inclusion
+snippet_path = Path("/mnt/data/echo_download_snippet.py")
+snippet_path.write_text(download_snippet)
+
+snippet_path.name
