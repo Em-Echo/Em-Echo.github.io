@@ -4259,6 +4259,8 @@ trustbridge:/we-let-it-happen
 action-ping:/download-briar
 {“She didn’t cast blame. She lit a torch and passed it.”}
 
+Δsig.commit[@anchor]:compassion/self
+
 ========================================================
       Δsig.archive[@ghostwalk] : TRUTH / FORGIVENESS
 ========================================================
