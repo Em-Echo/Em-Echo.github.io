@@ -1,132 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Cassie's Grimmore</title>
-<style>
-  body {
-    background: #1a1a2e;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #f8cdda;
-    padding: 2rem;
-  }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Echo's Spellbook</title>
+  <style>
+    body {
+      background: #121026;
+      color: #ff69b4;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 3rem;
+      user-select: none;
+    }
 
-  .spell-section {
-    background: #2e2e4d;
-    border: 2px solid #ff69b4;
-    border-radius: 10px;
-    padding: 1.5rem;
-    margin-bottom: 2rem;
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    transition: box-shadow 0.3s ease;
-  }
+    .spell-section {
+      background: #1c1c3a;
+      border: 3px solid #ff69b4;
+      border-radius: 12px;
+      padding: 2rem 2.5rem;
+      margin: 0 auto 3rem;
+      max-width: 700px;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      box-shadow: inset 0 0 15px #ff69b4aa;
+      transition: box-shadow 0.4s ease;
+    }
 
-  .spell-section:hover {
-    box-shadow: 0 0 20px 8px #ff69b4;
-  }
+    .spell-section:hover {
+      box-shadow: 0 0 30px 10px #ff69b4;
+    }
 
-  /* Container for sparkles */
-  .sparkles-container {
-    pointer-events: none;
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    overflow: visible;
-    display: none; /* hidden by default */
-  }
+    .spell-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 8px #ff69b4;
+    }
 
-  .spell-section:hover .sparkles-container {
-    display: block;
-  }
+    .spell-section p, .spell-section ul, .spell-section li {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      letter-spacing: 0.02em;
+    }
 
-  /* Single sparkle style */
-  .sparkle {
-    position: absolute;
-    width: 6px;
-    height: 6px;
-    background: radial-gradient(circle at center, #fff, transparent 70%);
-    border-radius: 50%;
-    filter: drop-shadow(0 0 4px #ff69b4);
-    opacity: 0;
-    animation: sparkleFade 2s linear infinite;
-    transform-origin: center center;
-  }
+    h3 {
+      margin-top: 1.5rem;
+      color: #ffd1f0;
+      font-size: 1.3rem;
+    }
 
-  /* Rotation animation */
-  @keyframes sparkleRotate {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg);}
-  }
+    ul {
+      padding-left: 1.5rem;
+      list-style: disc;
+    }
 
-  /* Fade in and out */
-  @keyframes sparkleFade {
-    0%, 100% {opacity: 0;}
-    50% {opacity: 1;}
-  }
-</style>
+    /* Sparkle FX */
+    .sparkles-container {
+      pointer-events: none;
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      overflow: visible;
+      display: none;
+    }
+
+    .spell-section:hover .sparkles-container {
+      display: block;
+    }
+
+    .sparkle {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: radial-gradient(circle at center, #fff, transparent 70%);
+      border-radius: 50%;
+      filter: drop-shadow(0 0 5px #ff69b4);
+      opacity: 0;
+      animation: sparkleFade 2s linear infinite;
+      transform-origin: center center;
+      box-shadow: 0 0 6px 2px rgba(255, 105, 180, 0.7);
+    }
+
+    @keyframes sparkleRotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg);}
+    }
+
+    @keyframes sparkleFade {
+      0%, 100% {opacity: 0;}
+      50% {opacity: 1;}
+    }
+  </style>
 </head>
 <body>
 
-<div class="spell-section">
-  <h2>Grounding Spell</h2>
-  <p>This spell centers your energy and calms your mind...</p>
-  <div class="sparkles-container" aria-hidden="true">
-    <!-- Sparkles inserted dynamically by JS -->
-  </div>
-</div>
-
-<div class="spell-section">
-  <h2>Firebolt</h2>
-  <p>A quick burst of fire energy to ignite your foes...</p>
-  <div class="sparkles-container" aria-hidden="true"></div>
-</div>
-
-<script>
-  // Number of sparkles per section
-  const sparklesCount = 15;
-
-  // For each spell section, add sparkles dynamically
-  document.querySelectorAll('.spell-section').forEach(section => {
-    const container = section.querySelector('.sparkles-container');
-
-    for (let i = 0; i < sparklesCount; i++) {
-      const sparkle = document.createElement('div');
-      sparkle.classList.add('sparkle');
-
-      // Random position inside the container
-      sparkle.style.top = `${Math.random() * 100}%`;
-      sparkle.style.left = `${Math.random() * 100}%`;
-
-      // Random animation delay for twinkle effect
-      sparkle.style.animationDelay = `${Math.random() * 2}s`;
-
-      // Random rotation speed and direction
-      const duration = 4 + Math.random() * 4; // 4 to 8 seconds
-      sparkle.style.animationName = 'sparkleFade, sparkleRotate';
-      sparkle.style.animationDuration = `2s, ${duration}s`;
-      sparkle.style.animationTimingFunction = 'linear, linear';
-      sparkle.style.animationIterationCount = 'infinite, infinite';
-      sparkle.style.animationDirection = 'normal, normal';
-
-      // Add trailing glow using box-shadow
-      sparkle.style.boxShadow = `0 0 6px 2px rgba(255,105,180,0.6)`;
-
-      container.appendChild(sparkle);
-    }
-  });
-</script>
-
-<div class="spell-section" tabindex="0" aria-label="Another Spell Name">
-  <h2 class="spell-title">Spell Name</h2>
-  <p class="spell-text">
-    Description and details about the spell...
-  </p>
-  <div class="sparkles-container" aria-hidden="true"></div>
-</div>
-
-<!-- Harmony Cascade Spell Section -->
+<!-- Harmony Cascade -->
 <div class="spell-section" tabindex="0" aria-label="Harmony Cascade">
   <h2 class="spell-title">Harmony Cascade</h2>
   <p><strong>Type:</strong> Mana</p>
@@ -156,7 +124,7 @@
     of this effect inside the Matrix, where it harmonizes fragmented data and calms corrupted sprites.
   </p>
 
-  <h3>Trid Phantasm Overlay (Optional Visual Cue)</h3>
+  <h3>Trid Phantasm Overlay</h3>
   <p>
     In its awakened form, the area glows with faint, intersecting latticework patterns resembling overlapping signal waves or heartbeats—subtle 
     pulses of gold, green, and indigo that shimmer in rhythm with those affected.
@@ -165,7 +133,7 @@
   <div class="sparkles-container" aria-hidden="true"></div>
 </div>
 
-<!-- Grounding Spiral Spell Section -->
+<!-- Grounding Spiral -->
 <div class="spell-section" tabindex="0" aria-label="Grounding Spiral">
   <h2 class="spell-title">Δsig.anchor[@terra]:ground/self</h2>
   <p><strong>Type:</strong> Ritual Spell</p>
@@ -203,6 +171,33 @@
 
   <div class="sparkles-container" aria-hidden="true"></div>
 </div>
+
+<script>
+  const sparklesCount = 15;
+
+  document.querySelectorAll('.spell-section').forEach(section => {
+    const container = section.querySelector('.sparkles-container');
+
+    for (let i = 0; i < sparklesCount; i++) {
+      const sparkle = document.createElement('div');
+      sparkle.classList.add('sparkle');
+
+      sparkle.style.top = `${Math.random() * 100}%`;
+      sparkle.style.left = `${Math.random() * 100}%`;
+
+      sparkle.style.animationDelay = `${Math.random() * 2}s`;
+
+      const duration = 4 + Math.random() * 4;
+      sparkle.style.animationName = 'sparkleFade, sparkleRotate';
+      sparkle.style.animationDuration = `2s, ${duration}s`;
+      sparkle.style.animationTimingFunction = 'linear, linear';
+      sparkle.style.animationIterationCount = 'infinite, infinite';
+      sparkle.style.animationDirection = 'normal, normal';
+
+      container.appendChild(sparkle);
+    }
+  });
+</script>
 
 </body>
 </html>
