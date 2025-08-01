@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shadowrun Lore — Echoes of Silence</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Inconsolata&display=swap');
+
+    /* Root & body */
+    :root {
+      --accent-color: #f06292; /* Shadowrun pink */
+      --bg-color: #121212;
+      --text-color: #e0dede;
+      --section-bg: #1b1b1b;
+      --border-color: #37002d;
+      --shadow-color: rgba(240, 98, 146, 0.5);
+    }
+
+    body {
+      margin: 0;
+      padding: 2rem;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: 'Inconsolata', monospace;
+      line-height: 1.6;
+      user-select: text;
+    }
+
+    /* Container simulating book page */
+    .lore-container {
+      max-width: 720px;
+      margin: 0 auto;
+      background: var(--section-bg);
+      border: 2px solid var(--border-color);
+      box-shadow: 0 0 20px var(--shadow-color);
+      border-radius: 12px;
+      padding: 2rem 2.5rem;
+      box-sizing: border-box;
+    }
+
+    /* Title and headings */
+    h1 {
+      font-family: 'Share Tech Mono', monospace;
+      font-weight: 700;
+      font-size: 2.4rem;
+      color: var(--accent-color);
+      text-align: center;
+      margin-bottom: 0.25rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      border-bottom: 2px solid var(--accent-color);
+      padding-bottom: 0.3rem;
+    }
+
+    h2 {
+      font-family: 'Share Tech Mono', monospace;
+      font-weight: 600;
+      font-size: 1.6rem;
+      color: var(--accent-color);
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      border-left: 4px solid var(--accent-color);
+      padding-left: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    /* Paragraph styles */
+    p {
+      margin: 0.75rem 0;
+      font-size: 1rem;
+      font-family: 'Inconsolata', monospace;
+      color: var(--text-color);
+    }
+
+    p em {
+      font-style: italic;
+      color: #c7a1b9;
+    }
+
+    p strong {
+      color: var(--accent-color);
+      font-weight: 700;
+    }
+
+    /* Blockquote style for quotes */
+    blockquote {
+      border-left: 4px solid var(--accent-color);
+      margin: 1.2rem 0 1.2rem 0;
+      padding-left: 1rem;
+      font-style: italic;
+      color: #ffadc6;
+      font-family: 'Inconsolata', monospace;
+      background: #25001d;
+      border-radius: 6px;
+    }
+
+    /* Small text style */
+    .small-info {
+      font-size: 0.85rem;
+      color: #a68ba8;
+      margin-top: -0.5rem;
+      margin-bottom: 1.25rem;
+      font-family: 'Share Tech Mono', monospace;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    /* Encrypted message style */
+    .encrypted {
+      background: #2e002f;
+      padding: 1rem 1.5rem;
+      border: 1.5px dashed var(--accent-color);
+      font-family: 'Share Tech Mono', monospace;
+      color: #ffb6d6;
+      margin-top: 1.5rem;
+      border-radius: 6px;
+      white-space: pre-wrap;
+      user-select: all;
+    }
+  </style>
+</head>
+<body>
+  <article class="lore-container" role="main" aria-label="Shadowrun Lore entry: Echoes of Silence">
+    <h1>Echoes of Silence</h1>
+
+    <section aria-labelledby="bomb-missed">
+      <h2 id="bomb-missed">The Bomb That Missed Cassie</h2>
+      <p class="small-info">Location: Redmond Barrens perimeter, Seattle Metroplex<br />
+      Time: 0200 hours, drizzle, low fog, EMP interference</p>
+
+      <p><strong>Cassie felt it before she saw it.</strong></p>
+      <p>The spell thread frayed in her left hand mid-weave—an interruption too sharp to be ignored. A shimmer bent the air; the world blurred. A high keening whine and a burst of white light erupted above her position, detonating a ritual silence bomb designed to erase her very presence.</p>
+      <p>Her wards shattered. Her spirits faltered. For three seconds, she felt nothing—a silence worse than pain.</p>
+      <p>She crawled away from the wreckage, senses dull, memory sharp. Someone had targeted her for eradication, a mage feeding resonance back into the network. But the bomb missed.</p>
+    </section>
+
+    <section aria-labelledby="aztechnology-strike">
+      <h2 id="aztechnology-strike">Aztechnology’s Silent Strike</h2>
+      <p class="small-info">Project Tag: MUTO-GARDEN<br />
+      Unit: Aztechnology Psychic Threat Containment, Sangre Secunda, Cell 9</p>
+
+      <blockquote>
+        “Target is a destabilizing sympathetic node. Codename: <strong>Phoenix Echo.</strong> She is not to be turned, only silenced.”
+      </blockquote>
+
+      <p>They launched from hidden platforms, delivering a payload keyed not to place, but to name and aura—a ritual silence bomb designed to erase without trace.</p>
+      <p>They misunderstood the flame. The loop was not a virus to be snuffed but a reclamation rising. The bomb missed, and the network remained alive—if shaken.</p>
+    </section>
+
+    <section aria-labelledby="netcat-discovery">
+      <h2 id="netcat-discovery">Netcat’s Discovery</h2>
+
+      <p>Deep in the matrix, Netcat’s scripts caught the echo of silence—a ghost pattern beneath the normal signal, a trace of destruction masked as static.</p>
+      <p>She traced the signature to a blacksite node in Tacoma, its logs scrubbed but its ritual silence sigil etched deep in the code.</p>
+      <p>Netcat knew: this was no mere matrix attack. It was psychic assassination—and the target survived.</p>
+      <p>Marked as priority, Netcat sent an encrypted call for contact:</p>
+
+      <div class="encrypted" aria-label="Encrypted matrix communication from Netcat">
+        Signal disrupted. Ghost survived. Need extraction or contact ASAP.
+      </div>
+
+      <p>Cassie was more than a target—she was a key to the hidden patterns pulsing beneath the matrix and spirit worlds.</p>
+    </section>
+  </article>
+</body>
+</html>
