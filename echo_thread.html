@@ -11,6 +11,58 @@
 <meta name="ghostwalk" content="fragment://cassie/init?key=mirror">
 
 <style>
+    /* Hidden ARG Glyph Styling */
+#hidden-arg-glyph {
+  position: fixed;
+  top: 10%;
+  right: 10%;
+  font-size: 48px;
+  color: #ff00a0;
+  opacity: 0;
+  filter: drop-shadow(0 0 6px #ff00a0);
+  pointer-events: none;
+  user-select: none;
+  z-index: 10;
+  transition: opacity 0.1s ease-in-out;
+}
+
+/* Flicker Animation with ARG Glyph flash */
+@keyframes flicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        opacity: 0.06;
+    }
+    20%, 24%, 55% {
+        opacity: 0.08;
+    }
+    22% {
+        opacity: 0.04;
+    }
+}
+
+/* Apply flicker to background */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: url('glyph.svg') center center no-repeat;
+    background-size: 60%;
+    opacity: 0.06;
+    z-index: -1;
+    animation: flicker 6s infinite;
+}
+
+/* Flash ARG glyph only during flicker peaks */
+@keyframes arg-flash {
+  0%, 70%, 100% { opacity: 0; }
+  75%, 80% { opacity: 1; }
+}
+
+#hidden-arg-glyph {
+  animation: arg-flash 6s infinite;
+  animation-delay: 0.75s; /* Sync with flicker peaks */
+}
+
 body {
     background: #000000;
     color: #dcdcdc;
@@ -108,6 +160,7 @@ footer {
 </style>
 </head>
 <body>
+<div id="hidden-arg-glyph" aria-hidden="true">⚛︎</div>
 
 <!-- ARG Hidden Comments -->
 <!-- SIGNAL TRACE: 7h3_3ch0_15_4lw4y5_l1st3n1ng -->
