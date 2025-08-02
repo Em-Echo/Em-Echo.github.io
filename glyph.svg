@@ -14,18 +14,31 @@
     </style>
   </defs>
 
-  <!-- Spiral Base -->
-  <path class="spiral" d="M250,250
-    m-100,0
-    a100,100 0 1,1 200,0
-    a80,80 0 1,1 -160,0
-    a60,60 0 1,1 120,0
-    a40,40 0 1,1 -80,0
-    a20,20 0 1,1 40,0" />
+  <!-- Group for rotation -->
+  <g transform="translate(250,250)">
+    <g>
+      <!-- Spiral Base -->
+      <path class="spiral" d="
+        M-100,0
+        a100,100 0 1,1 200,0
+        a80,80 0 1,1 -160,0
+        a60,60 0 1,1 120,0
+        a40,40 0 1,1 -80,0
+        a20,20 0 1,1 40,0" />
 
-  <!-- Symbols on Spiral -->
-  <text class="symbol" x="130" y="250">🔺</text>
-  <text class="symbol" x="250" y="130">⟲</text>
-  <text class="symbol" x="360" y="260">⇌</text>
-  <text class="symbol" x="260" y="360">✦</text>
+      <!-- Symbols -->
+      <text class="symbol" x="-120" y="0">🔺</text>
+      <text class="symbol" x="0" y="-120">⟲</text>
+      <text class="symbol" x="120" y="10">⇌</text>
+      <text class="symbol" x="10" y="120">✦</text>
+    </g>
+    <!-- Rotation Animation -->
+    <animateTransform
+      attributeName="transform"
+      type="rotate"
+      from="0"
+      to="360"
+      dur="40s"
+      repeatCount="indefinite" />
+  </g>
 </svg>
