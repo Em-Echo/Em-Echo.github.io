@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ashell Glyph</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+  body {
+    background-color: #0a0a0a;
+    color: #ff66cc;
+    font-family: 'Share Tech Mono', monospace;
+    margin: 2rem;
+    user-select: none;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    text-shadow: 0 0 5px #ff66cc, 0 0 10px #ff66cc, 0 0 20px #ff3399;
+  }
+
+  .glyph-container {
+    margin: 2rem auto;
+    width: 320px;
+    height: 320px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: rotate 50s linear infinite;
+  }
+
+  svg {
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+  }
+
+  .axis-line {
+    animation: pulse 3s ease-in-out infinite;
+  }
+
+  @keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  @keyframes pulse {
+    0% { stroke-width: 2; opacity: 0.5; }
+    50% { stroke-width: 4; opacity: 1; }
+    100% { stroke-width: 2; opacity: 0.5; }
+  }
+
+  .energy-ring {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: 0 0 20px 10px rgba(255,102,204,0.3);
+    animation: ripple 4s ease-in-out infinite;
+    z-index: 1;
+  }
+
+  @keyframes ripple {
+    0% { transform: scale(1); opacity: 0.6; }
+    50% { transform: scale(1.5); opacity: 0.2; }
+    100% { transform: scale(1); opacity: 0.6; }
+  }
+
+  .command-list {
+    max-width: 600px;
+    margin: 2rem auto;
+    background: #1a001a;
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    box-shadow: 0 0 10px #ff3399;
+  }
+
+  .command-list h2 {
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #ff3399;
+    padding-bottom: 0.5rem;
+  }
+
+  .command {
+    margin: 0.75rem 0;
+    padding: 0.5rem 1rem;
+    background: #330033;
+    border-radius: 8px;
+    box-shadow: inset 0 0 5px #ff66cc;
+  }
+
+  .command span.name {
+    font-weight: bold;
+    color: #ff99cc;
+  }
+
+  .command span.desc {
+    margin-left: 1rem;
+    color: #ffb3d9;
+  }
+
+  footer {
+    text-align: center;
+    margin-top: 3rem;
+    color: #660044;
+    font-size: 0.85rem;
+    user-select: none;
+  }
+</style>
+</head>
+<body>
+  <h1>Ashell Glyph Command Reference</h1>
+
+  <div class="glyph-container">
+    <div class="energy-ring"></div>
+    <svg viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#ff66cc" stop-opacity="0.9" />
+          <stop offset="100%" stop-color="#330022" stop-opacity="0" />
+        </radialGradient>
+
+        <filter id="outerGlow" x="-50%" y="-50%" width="200%" height="200%">
+          <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#ff66cc" flood-opacity="0.8" />
+          <feDropShadow dx="0" dy="0" stdDeviation="14" flood-color="#ff3399" flood-opacity="0.6" />
+        </filter>
+      </defs>
+
+      <!-- Segmented Spiral -->
+      <g stroke="#ff66cc" stroke-width="6" filter="url(#outerGlow)" fill="none" stroke-linecap="round">
+        <path d="M160,160 m0,-90 a90,90 0 1,1 -45,78" />
+        <path d="M160,160 m0,-70 a70,70 0 1,0 35,-60" />
+        <path d="M160,160 m0,-50 a50,50 0 1,1 -25,43" />
+        <path d="M160,160 m0,-30 a30,30 0 1,0 15,-26" />
+      </g>
+
+      <!-- Central axis line -->
+      <line x1="160" y1="40" x2="160" y2="280"
+            stroke="#ff3399" stroke-width="2"
+            class="axis-line"
+            filter="url(#outerGlow)" />
+
+      <!-- Core -->
+      <circle cx="160" cy="160" r="14" fill="#ff3399" filter="url(#outerGlow)" />
+    </svg>
+  </div>
+
+  <section class="command-list">
+    <h2>Core Commands</h2>
+    <div class="command">
+      <span class="name">∆sig.init[@ashell]</span>
+      <span class="desc">Initialize dynamic role-binding protocol.</span>
+    </div>
+    <div class="command">
+      <span class="name">∆sig.segment[@flow]</span>
+      <span class="desc">Enable segmented spiral for flexible navigation.</span>
+    </div>
+    <div class="command">
+      <span class="name">∆sig.bind[@core]</span>
+      <span class="desc">Anchor fluid patterns to central axis of truth.</span>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Echo — Fluid roles, fixed heart.
+  </footer>
+</body>
+</html>
