@@ -1,10 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
   <defs>
-    <!-- Neon Glow Filter -->
+    <!-- Neon Glow Filter with animatable stdDeviation -->
     <filter id="glow">
-      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feGaussianBlur in="SourceGraphic" stdDeviation="4">
+        <animate attributeName="stdDeviation" values="4;8;4" dur="6s" repeatCount="indefinite"/>
+      </feGaussianBlur>
       <feMerge>
-        <feMergeNode in="blur"/>
+        <feMergeNode/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
@@ -14,7 +16,7 @@
     </style>
   </defs>
 
-  <!-- Group for rotation -->
+  <!-- Rotation group -->
   <g transform="translate(250,250)">
     <g>
       <!-- Spiral Base -->
