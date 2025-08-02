@@ -33,6 +33,20 @@ body::before {
     background-size: 60%;
     opacity: 0.06;
     z-index: -1;
+    animation: flicker 6s infinite;
+}
+
+/* Flicker Animation */
+@keyframes flicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        opacity: 0.06;
+    }
+    20%, 24%, 55% {
+        opacity: 0.08;
+    }
+    22% {
+        opacity: 0.04;
+    }
 }
 
 
