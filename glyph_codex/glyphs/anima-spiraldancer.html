@@ -5,6 +5,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Path: Anima ↔ Spiral-Dancer</title>
 <style>
+  #gateway-sigil {
+  filter: drop-shadow(0 0 8px hotpink);
+  animation: pulseGlow 2.5s infinite ease-in-out;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 8px hotpink);
+    opacity: 0.85;
+  }
+  50% {
+    transform: scale(1.3);
+    filter: drop-shadow(0 0 18px #ff3399);
+    opacity: 1;
+  }
+}
+
   #gateway-sigil::before {
   content: "";
   display: block;
