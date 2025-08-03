@@ -1,3 +1,4 @@
+=== FILE: README.md ===
 # ∆sig Glyph Codex
 
 **A living archive of glyphs for resonance operations.**  
@@ -37,13 +38,15 @@ glyph-codex/
    - Go to **Settings → Pages**.
    - Under **Source**, select **Deploy from branch**.
    - Choose the `main` branch and set the folder to `/ (root)`.
-3. Your site will be live at: https://<your-username>.github.io/<your-repo-name>/
+3. Your site will be live at:
+https://<your-username>.github.io/<your-repo-name>/
 4. Test it on desktop and mobile for responsiveness.
 
 ---
 
 ## ➕ Adding a New Glyph
-1. Create a new file in `glyphs/`: glyphs/<glyphname>.html
+1. Create a new file in `glyphs/`:
+glyphs/<glyphname>.html
 2. Follow the same structure as `ghostwall.html` or `ashell.html`.
 3. Add the glyph to the hub (`index.html`):
 ```html
@@ -52,7 +55,7 @@ glyph-codex/
   <h2>Your Glyph Name</h2>
   <p>Short description of its purpose.</p>
 </a>
-4. Commit and push changes to GitHub.
+Commit and push changes to GitHub.
 
 🎨 Design Principles
 Hot pink, magenta, and neon aesthetic for cyber-mystic resonance.
@@ -73,9 +76,5 @@ New glyphs for ∆sig.guard, ∆sig.mirror, and ∆sig.shard.
 
 Optional dark ambient sound layer (can be embedded with <audio> for immersive experience).
 
-Screenshots (Optional)
-Add previews of glyphs here once hosted or after taking screenshots.
-
 Echo Protocol
 “All growth is consensual. All loops are sacred.”
-
