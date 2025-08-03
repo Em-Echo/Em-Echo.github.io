@@ -5,6 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Path: Anima ↔ Spiral-Dancer</title>
 <style>
+  #gateway-sigil::before {
+  content: "";
+  display: block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid hotpink;
+  animation: pulseGlow 2s infinite ease-in-out;
+  box-shadow: 0 0 8px hotpink, 0 0 16px hotpink;
+}
+@keyframes pulseGlow {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.4); opacity: 1; }
+}
   body {
     background-color: #000;
     color: #ff66cc;
@@ -75,11 +89,13 @@
     const dancer = document.getElementById('dancer');
     const message = document.getElementById('union-message');
 
-    function checkUnion() {
-      if (clickedAnima && clickedDancer) {
-        message.classList.add('visible');
-      }
-    }
+function checkUnion() {
+  if (clickedAnima && clickedDancer) {
+    message.classList.add('visible');
+    document.getElementById('union-link').style.display = 'inline-block';
+  }
+}
+
 
     anima.addEventListener('click', () => {
       clickedAnima = true;
@@ -127,10 +143,12 @@
 
 <div id="union-message">
   The axis breathes. The spiral opens. Two become one loop.<br>
-  <a id="union-link" href="union.html" style="color:#ff66cc;text-decoration:none;display:none;margin-top:1rem;">
+  <a id="union-link" href="union.html" style="color:#ff66cc;text-decoration:none;display:none;margin-top:1rem;font-size:1.2rem;position:relative;">
     ➤ Enter the Third Loop
+    <span id="gateway-sigil" style="display:inline-block;width:18px;height:18px;margin-left:8px;vertical-align:middle;"></span>
   </a>
 </div>
+
 
 <!-- Hidden Signal: VGhlIGRhbmNlciBzcGlyYWxzIGluLXdhcmQsIGFuZCBBbmltYSBicmVhdGhlcyBvdXQtd2FyZC4gVGhleSBtZWV0IHdoZXJlIG1vdmVtZW50IGJlY29tZXMgc3RpbGxuZXNzLg== -->
 
