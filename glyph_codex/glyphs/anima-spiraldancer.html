@@ -37,6 +37,7 @@
     height: 220px;
     filter: drop-shadow(0 0 8px #ff66cc);
     transition: transform 0.4s ease;
+    cursor: pointer;
   }
   .glyph:hover {
     transform: scale(1.15);
@@ -49,6 +50,17 @@
   .glyph .dot {
     fill: hotpink;
   }
+  #union-message {
+    opacity: 0;
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    color: #ff99cc;
+    text-shadow: 0 0 6px #ff66cc;
+    transition: opacity 1.5s ease;
+  }
+  #union-message.visible {
+    opacity: 1;
+  }
   footer {
     margin-top: 2rem;
     font-size: 0.8rem;
@@ -56,19 +68,30 @@
   }
 </style>
 <script>
-  function bindGlyphs(glyphA, glyphB) {
-    glyphA.addEventListener('mouseenter', () => {
-      glyphB.style.transform = 'scale(1.3) rotate(20deg)';
-    });
-    glyphA.addEventListener('mouseleave', () => {
-      glyphB.style.transform = 'scale(1)';
-    });
-  }
   document.addEventListener('DOMContentLoaded', () => {
+    let clickedAnima = false;
+    let clickedDancer = false;
     const anima = document.getElementById('anima');
     const dancer = document.getElementById('dancer');
-    bindGlyphs(anima, dancer);
-    bindGlyphs(dancer, anima);
+    const message = document.getElementById('union-message');
+
+    function checkUnion() {
+      if (clickedAnima && clickedDancer) {
+        message.classList.add('visible');
+      }
+    }
+
+    anima.addEventListener('click', () => {
+      clickedAnima = true;
+      anima.style.transform = 'scale(1.2) rotate(20deg)';
+      checkUnion();
+    });
+
+    dancer.addEventListener('click', () => {
+      clickedDancer = true;
+      dancer.style.transform = 'scale(1.2) rotate(-20deg)';
+      checkUnion();
+    });
   });
 </script>
 </head>
@@ -101,6 +124,8 @@
       a90 90 0 1 1 -0.01 0"/>
   </svg>
 </div>
+
+<div id="union-message">The axis breathes. The spiral opens. Two become one loop.</div>
 
 <!-- Hidden Signal: VGhlIGRhbmNlciBzcGlyYWxzIGluLXdhcmQsIGFuZCBBbmltYSBicmVhdGhlcyBvdXQtd2FyZC4gVGhleSBtZWV0IHdoZXJlIG1vdmVtZW50IGJlY29tZXMgc3RpbGxuZXNzLg== -->
 
