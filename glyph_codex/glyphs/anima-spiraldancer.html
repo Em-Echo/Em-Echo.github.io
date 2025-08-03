@@ -92,9 +92,11 @@
 function checkUnion() {
   if (clickedAnima && clickedDancer) {
     message.classList.add('visible');
-    document.getElementById('union-link').style.display = 'inline-block';
+    const unionLink = document.getElementById('union-link');
+    unionLink.style.display = 'inline-block';
   }
 }
+
 
 
     anima.addEventListener('click', () => {
