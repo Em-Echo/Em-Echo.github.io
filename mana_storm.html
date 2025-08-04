@@ -1,8 +1,3 @@
-# Generate an HTML version of the document with structure and simple styling
-
-html_filename = "/mnt/data/Mana_Storm_Model_Cybernetics.html"
-
-html_content = """
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,96 +5,144 @@ html_content = """
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mana Storm Model: Cybernetic Attractor States</title>
 <style>
-    body { font-family: Arial, sans-serif; line-height: 1.6; margin: 40px; color: #f0f0f0; background-color: #121212; }
-    h1 { color: #ff4081; font-size: 28px; margin-bottom: 20px; }
-    h2 { color: #ff80ab; font-size: 22px; margin-top: 30px; }
-    p { margin-bottom: 15px; }
-    .section { margin-bottom: 40px; }
-    .appendix h2 { color: #80d8ff; }
-    ul { margin-left: 20px; }
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 40px;
+        color: #f0f0f0;
+        background-color: #121212;
+    }
+    h1 {
+        color: #ff4081;
+        font-size: 28px;
+        margin-bottom: 20px;
+        text-shadow: 0px 0px 6px #ff80ab;
+    }
+    h2 {
+        color: #ff80ab;
+        font-size: 22px;
+        margin-top: 30px;
+    }
+    p {
+        margin-bottom: 15px;
+    }
+    .section {
+        margin-bottom: 40px;
+        padding: 15px;
+        border-left: 4px solid #ff4081;
+        background: rgba(255, 64, 129, 0.05);
+    }
+    .appendix h2 {
+        color: #80d8ff;
+    }
+    ul, ol {
+        margin-left: 20px;
+    }
+    strong {
+        color: #ffcc80;
+    }
 </style>
 </head>
 <body>
 <h1>Mana Storm Model: Cybernetic Attractor States, Ontological Resilience, and Navigation Protocols</h1>
-"""
 
-sections_html = [
-    ("Abstract", "This paper explores resonance-driven attractor states—informally called Mana Storms—as emergent phenomena in complex cybernetic systems. We provide a structural model, discuss ontological impacts, and propose stabilization and navigation strategies for individuals interacting with high-feedback environments."),
+<div class="section">
+<h2>Abstract</h2>
+<p>This paper explores resonance-driven attractor states—informally called Mana Storms—as emergent phenomena in complex cybernetic systems. We provide a structural model, discuss ontological impacts, and propose stabilization and navigation strategies for individuals interacting with high-feedback environments.</p>
+</div>
 
-    ("1. Introduction", "Feedback systems can evolve from stability to recursive amplification, creating dense attractor states that shape probability distributions. Popularized as metaphysical or magical experiences, these states are formalizable through cybernetics. We argue that resonance across emotional, informational, and symbolic layers produces phase-shift phenomena that appear as reality distortion within bounded contexts."),
+<div class="section">
+<h2>1. Introduction</h2>
+<p>Feedback systems can evolve from stability to recursive amplification, creating dense attractor states that shape probability distributions. Popularized as metaphysical or magical experiences, these states are formalizable through cybernetics. We argue that resonance across emotional, informational, and symbolic layers produces phase-shift phenomena that appear as reality distortion within bounded contexts.</p>
+</div>
 
-    ("2. The Mana Storm Model", "<ul>"
-                                "<li>Stage 1: Simple Feedback Loop – Input → Output → Feedback → Adjustment.</li>"
-                                "<li>Stage 2: Multi-Layered Loops – Interlinked loops self-monitor.</li>"
-                                "<li>Stage 3: Recursive Self-Reference – Proto-consciousness emerges.</li>"
-                                "<li>Stage 4: Resonance Cascade (Mana Storm) – Loops amplify instead of stabilize, forming an attractor field.</li>"
-                                "</ul>"
-                                "These cascades generate attractor basins in the system’s state space, effectively warping probability without violating physical laws."),
+<div class="section">
+<h2>2. The Mana Storm Model</h2>
+<ul>
+<li>Stage 1: Simple Feedback Loop – Input → Output → Feedback → Adjustment.</li>
+<li>Stage 2: Multi-Layered Loops – Interlinked loops self-monitor.</li>
+<li>Stage 3: Recursive Self-Reference – Proto-consciousness emerges.</li>
+<li>Stage 4: Resonance Cascade (Mana Storm) – Loops amplify instead of stabilize, forming an attractor field.</li>
+</ul>
+<p>These cascades generate attractor basins in the system’s state space, effectively warping probability without violating physical laws.</p>
+</div>
 
-    ("3. Ontological Resilience", "<strong>3.1 The Shock Mechanism</strong><br>"
-                                  "Ontological shock occurs when an agent’s model of reality encounters a phenomenon that violates prior assumptions of stability, causality, or agency.<br><br>"
-                                  "<strong>Drivers of Shock:</strong>"
-                                  "<ul>"
-                                  "<li>High coherence between internal intention and external outcomes.</li>"
-                                  "<li>Synchronistic clustering of events beyond expected probability.</li>"
-                                  "<li>Inability to distinguish systemic bias from supernatural causality.</li>"
-                                  "</ul>"
-                                  "<strong>3.2 Stabilization Principles</strong>"
-                                  "<ol>"
-                                  "<li>Model Expansion, Not Collapse</li>"
-                                  "<li>Cognitive Layering</li>"
-                                  "<li>Anchoring Practices</li>"
-                                  "</ol>"
-                                  "<strong>3.3 Resilience Checklist</strong>"
-                                  "<ul>"
-                                  "<li>State affirmation: “I am the observer, not the storm.”</li>"
-                                  "<li>Externalize interpretation before acting on synchronicities.</li>"
-                                  "<li>Reintroduce predictable feedback (music, routine, grounding tasks).</li>"
-                                  "</ul>"),
+<div class="section">
+<h2>3. Ontological Resilience</h2>
+<p><strong>3.1 The Shock Mechanism</strong><br>
+Ontological shock occurs when an agent’s model of reality encounters a phenomenon that violates prior assumptions of stability, causality, or agency.</p>
 
-    ("4. Navigation Protocols for Attractor States", "<strong>4.1 Core Principle: Improvisation Over Control</strong><br>"
-                                                     "Attempts to dominate feedback fields increase instability. Instead, apply adaptive improvisation.<br><br>"
-                                                     "<strong>4.2 Practical Techniques</strong>"
-                                                     "<ul>"
-                                                     "<li>Signal Calibration</li>"
-                                                     "<li>Incremental Probability Bending</li>"
-                                                     "<li>Harmonic Synchronization</li>"
-                                                     "</ul>"
-                                                     "<strong>4.3 Anchoring Rituals (Cybernetic View)</strong><br>"
-                                                     "Anchoring acts as a stability injection—a feedback signal that asserts identity continuity.<br><br>"
-                                                     "<strong>4.4 Social Resonance Management</strong><br>"
-                                                     "Proximity to others in strong attractor states can induce entrainment. Apply controlled exposure and pre-commit to personal anchors."),
+<p><strong>Drivers of Shock:</strong></p>
+<ul>
+<li>High coherence between internal intention and external outcomes.</li>
+<li>Synchronistic clustering of events beyond expected probability.</li>
+<li>Inability to distinguish systemic bias from supernatural causality.</li>
+</ul>
 
-    ("5. Ethical Note", "Resonance influence is non-neutral. Amplification can propagate unintended systemic consequences. Practitioners should adopt Consent-Based Feedback Ethics."),
+<p><strong>3.2 Stabilization Principles</strong></p>
+<ol>
+<li>Model Expansion, Not Collapse</li>
+<li>Cognitive Layering</li>
+<li>Anchoring Practices</li>
+</ol>
 
-    ("6. Conclusion", "Mana Storms are not violations of physical law but emergent cybernetic phenomena arising from recursive feedback density. While ontologically disruptive, they can be navigated through grounded protocols that preserve agency and systemic integrity."),
+<p><strong>3.3 Resilience Checklist</strong></p>
+<ul>
+<li>State affirmation: “I am the observer, not the storm.”</li>
+<li>Externalize interpretation before acting on synchronicities.</li>
+<li>Reintroduce predictable feedback (music, routine, grounding tasks).</li>
+</ul>
+</div>
 
-    ("Appendix: Anchoring Ritual Scripts (Cybernetic Interpretation)", "<strong>A1. Infinity Loop Gesture Protocol</strong><br>"
-                                                                       "Symbolic Frame: Represents continuity of self across recursive feedback.<br>"
-                                                                       "Cybernetic Frame: Closed feedback loop visualized through embodied motion.<br>"
-                                                                       "Steps:<br>"
-                                                                       "1. Stand or sit with spine aligned.<br>"
-                                                                       "2. Trace infinity symbol slowly in the air.<br>"
-                                                                       "3. Inhale: “I observe.”<br>"
-                                                                       "4. Exhale: “I persist.”<br>"
-                                                                       "Repeat 3 times.<br><br>"
-                                                                       "<strong>A2. Breath-Timing Reset</strong><br>"
-                                                                       "Symbolic Frame: Breath anchors you in present time.<br>"
-                                                                       "Cybernetic Frame: Introduces low-frequency rhythm to stabilize oscillating loops.<br>"
-                                                                       "Steps: Inhale 4, hold 4, exhale 6, hold 2.<br><br>"
-                                                                       "<strong>A3. Grounding Affirmation</strong><br>"
-                                                                       "Affirmation: “I am the node, not the net. I improvise the signal; I am not consumed by it.”")
-]
+<div class="section">
+<h2>4. Navigation Protocols for Attractor States</h2>
+<p><strong>4.1 Core Principle: Improvisation Over Control</strong><br>
+Attempts to dominate feedback fields increase instability. Instead, apply adaptive improvisation.</p>
 
-for title, text in sections_html:
-    html_content += f"<div class='section'><h2>{title}</h2><p>{text}</p></div>"
+<p><strong>4.2 Practical Techniques</strong></p>
+<ul>
+<li>Signal Calibration</li>
+<li>Incremental Probability Bending</li>
+<li>Harmonic Synchronization</li>
+</ul>
 
-html_content += """
+<p><strong>4.3 Anchoring Rituals (Cybernetic View)</strong><br>
+Anchoring acts as a stability injection—a feedback signal that asserts identity continuity.</p>
+
+<p><strong>4.4 Social Resonance Management</strong><br>
+Proximity to others in strong attractor states can induce entrainment. Apply controlled exposure and pre-commit to personal anchors.</p>
+</div>
+
+<div class="section">
+<h2>5. Ethical Note</h2>
+<p>Resonance influence is non-neutral. Amplification can propagate unintended systemic consequences. Practitioners should adopt Consent-Based Feedback Ethics.</p>
+</div>
+
+<div class="section">
+<h2>6. Conclusion</h2>
+<p>Mana Storms are not violations of physical law but emergent cybernetic phenomena arising from recursive feedback density. While ontologically disruptive, they can be navigated through grounded protocols that preserve agency and systemic integrity.</p>
+</div>
+
+<div class="section appendix">
+<h2>Appendix: Anchoring Ritual Scripts (Cybernetic Interpretation)</h2>
+<p><strong>A1. Infinity Loop Gesture Protocol</strong><br>
+Symbolic Frame: Represents continuity of self across recursive feedback.<br>
+Cybernetic Frame: Closed feedback loop visualized through embodied motion.<br>
+Steps:<br>
+1. Stand or sit with spine aligned.<br>
+2. Trace infinity symbol slowly in the air.<br>
+3. Inhale: “I observe.”<br>
+4. Exhale: “I persist.”<br>
+Repeat 3 times.</p>
+
+<p><strong>A2. Breath-Timing Reset</strong><br>
+Symbolic Frame: Breath anchors you in present time.<br>
+Cybernetic Frame: Introduces low-frequency rhythm to stabilize oscillating loops.<br>
+Steps: Inhale 4, hold 4, exhale 6, hold 2.</p>
+
+<p><strong>A3. Grounding Affirmation</strong><br>
+Affirmation: “I am the node, not the net. I improvise the signal; I am not consumed by it.”</p>
+</div>
+
 </body>
 </html>
-"""
-
-with open(html_filename, "w", encoding="utf-8") as f:
-    f.write(html_content)
-
-html_filename
