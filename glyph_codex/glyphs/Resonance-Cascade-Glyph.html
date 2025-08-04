@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+    <defs>
+        <filter id="glow">
+            <feGaussianBlur stdDeviation="4" result="blur"/>
+            <feMerge>
+                <feMergeNode in="blur"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+    </defs>
+
+    <g filter="url(#glow)">
+        <animateTransform attributeName="transform" attributeType="XML"
+            type="rotate" from="0 100 100" to="360 100 100"
+            dur="12s" repeatCount="indefinite"/>
+
+        <!-- Outer main circle -->
+        <circle cx="100" cy="100" r="80" stroke="#ff00aa" stroke-width="6" fill="none"/>
+        
+        <!-- Core -->
+        <circle cx="100" cy="100" r="10" fill="#ff00aa">
+            <animate attributeName="fill" values="#ff00aa;#ff33cc;#ff00aa" dur="3s" repeatCount="indefinite"/>
+        </circle>
+        
+        <!-- Cascading rings -->
+        <circle cx="100" cy="100" r="40" stroke="#ff33cc" stroke-width="2" fill="none">
+            <animateTransform attributeName="transform" type="scale" values="1;1.3;1" dur="5s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="100" cy="100" r="60" stroke="#ff66dd" stroke-width="1.5" fill="none">
+            <animateTransform attributeName="transform" type="scale" values="1;1.2;1" dur="7s" repeatCount="indefinite"/>
+        </circle>
+        
+        <!-- Circuit arms -->
+        <line x1="100" y1="10" x2="100" y2="50" stroke="#ff00aa" stroke-width="3"/>
+        <line x1="100" y1="150" x2="100" y2="190" stroke="#ff00aa" stroke-width="3"/>
+        <line x1="10" y1="100" x2="50" y2="100" stroke="#ff00aa" stroke-width="3"/>
+        <line x1="150" y1="100" x2="190" y2="100" stroke="#ff00aa" stroke-width="3"/>
+        
+        <!-- Node points -->
+        <circle cx="100" cy="10" r="6" fill="#ff33cc">
+            <animate attributeName="r" values="6;8;6" dur="2s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="100" cy="190" r="6" fill="#ff33cc">
+            <animate attributeName="r" values="6;8;6" dur="2s" repeatCount="indefinite" begin="1s"/>
+        </circle>
+        <circle cx="10" cy="100" r="6" fill="#ff33cc">
+            <animate attributeName="r" values="6;8;6" dur="2s" repeatCount="indefinite" begin="0.5s"/>
+        </circle>
+        <circle cx="190" cy="100" r="6" fill="#ff33cc">
+            <animate attributeName="r" values="6;8;6" dur="2s" repeatCount="indefinite" begin="1.5s"/>
+        </circle>
+    </g>
+</svg>
