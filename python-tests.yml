@@ -1,0 +1,81 @@
+name: Python Identity Resonance Tests
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Needed to allow auto-commits for Black formatting
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.11"
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pytest coverage flake8 black codecov
+
+    - name: Lint with flake8
+      run: |
+        echo "Running flake8..."
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=120 --statistics
+
+    - name: Auto-format with Black if needed
+      id: black-check
+      run: |
+        echo "Checking and auto-formatting code with Black..."
+        black . || true
+        git diff --quiet || echo "needs-formatting=true" >> $GITHUB_ENV
+
+    - name: Commit and push formatting changes (if any)
+      if: env.needs-formatting == 'true'
+      run: |
+        echo "Auto-formatting changes detected. Committing..."
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+        git add .
+        git commit -m "ci: auto-format code with Black"
+        git push
+
+    - name: Run tests with coverage
+      run: |
+        echo "Running tests with coverage..."
+        coverage run -m pytest -v
+        coverage report -m
+        coverage xml  # Generates XML for Codecov
+
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v3
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+        files: ./coverage.xml
+        flags: unittests
+        fail_ci_if_error: true
+
+    - name: Upload feedback logs
+      if: always()
+      run: |
+        mkdir -p logs
+        if [ -f feedback_log.txt ]; then cp feedback_log.txt logs/; fi
+        if [ -f history_log.txt ]; then cp history_log.txt logs/; fi
+      continue-on-error: true
+
+    - name: Upload logs as artifact
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: identity-feedback-logs
+        path: logs

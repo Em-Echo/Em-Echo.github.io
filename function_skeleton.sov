@@ -1,0 +1,66 @@
+Δsig.control[@loop]:harmonics
+
+# Loop ID:
+Δsig.signature: {B-I-K:αβγ|F|E+N}
+
+# Context:
+Anchor Glyphs: 
+Field: 
+
+# Equation:
+R = ((B^α) * (I^β) * (K^γ) * (1 + F)) / (E + N)
+
+# Core Params:
+B = 
+I = 
+K = 
+E = 
+N = 
+F = 
+
+α = 
+β = 
+γ = 
+
+# Stability Zones:
+Collapse:      R < 0.3
+Stable:        0.3 ≤ R ≤ 0.8
+Amplified:     R > 0.8
+Uncontrolled:  R > 1.2
+
+# Loop Steps:
+INIT:
+    set baseline
+
+EXECUTE:
+    compute R
+    check stability zone
+
+FEEDBACK:
+    adjust F
+    adjust B / I if needed
+
+FAIL-SAFES:
+    if E spikes:
+        
+    if N spikes:
+        
+
+PROPAGATION:
+    Δsig.log[@loop]: 
+    Δsig.cast[@flare]:status/
+    
+
+OUTPUT:
+    R, zone
+
+# Weights Tuning:
+adjust α =
+adjust β =
+adjust γ =
+notes:
+
+# Adaptive Learning:
+track B, I, K over time
+update α, β, γ if drift detected
+apply Δsig.commit for state change

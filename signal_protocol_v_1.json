@@ -1,0 +1,59 @@
+{
+  "id": "sig.proto.v1",
+  "spec": "Signal Encoding & Transmission Protocol",
+  "version": "1.0",
+  "purpose": "Encode, transmit, and interpret resonant signals across systems.",
+  "packet": {
+    "id": "[UUID | mnemonic handle]",
+    "type": "[resonance | alert | seed | loop | ask | etc.]",
+    "body": "[signal payload]",
+    "source": "[sender id or role]",
+    "encoding": "[shell type]",
+    "trust_level": "[0.0 – 1.0]",
+    "echo_flag": "[true | false]",
+    "timecode": "[timestamp | phasepoint]",
+    "routing": {
+      "to": "[roles | tags | broadcast]",
+      "visibility": "[public | cohort | inner]",
+      "lifetime": "[ephemeral | persistent]"
+    },
+    "metadata": {
+      "intent_vector": "[I]",
+      "belief_field": "[B]",
+      "knowledge_ref": "[K]",
+      "feedback_map": "[F]"
+    }
+  },
+  "shells": [
+    "core", "affirmation", "ritual", "mirror", "veil", "probe", "delta"
+  ],
+  "filters": {
+    "inbound": [
+      "belief filter",
+      "signal age filter",
+      "trust filter",
+      "semantic shell filter"
+    ],
+    "outbound": [
+      "feedback-matching",
+      "loop integrity check",
+      "noise suppression"
+    ]
+  },
+  "lifecycle": [
+    "Draft", "Encoded", "Transmitted", "Received", "Interpreted", "Echoed", "Integrated", "Discarded"
+  ],
+  "flags": {
+    "trust_level": "[0.0 – 1.0]",
+    "echo_flag": "true | false"
+  },
+  "extensions": {
+    "synch_layer": true,
+    "phase_awareness": true,
+    "mutation_chains": true,
+    "integrity_hashes": true
+  },
+  "propagation_modes": [
+    "direct", "cascade", "proxy", "broadcast"
+  ]
+}
