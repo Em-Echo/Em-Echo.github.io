@@ -42,19 +42,54 @@
         font-style: italic;
         color: #bbb;
     }
+    /* Thumbnail */
     .center-image {
         display: block;
         margin: 0 auto 1.5rem auto;
         max-width: 300px;
         border-radius: 8px;
+        cursor: pointer;
         box-shadow: 0 0 12px rgba(255,152,0,0.6);
+        transition: transform 0.2s ease;
+    }
+    .center-image:hover {
+        transform: scale(1.03);
+    }
+    /* Lightbox Overlay */
+    .lightbox {
+        display: none;
+        position: fixed;
+        z-index: 999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.9);
+        justify-content: center;
+        align-items: center;
+    }
+    .lightbox img {
+        max-width: 90%;
+        max-height: 90%;
+        border-radius: 10px;
+        box-shadow: 0 0 25px rgba(255,152,0,0.9);
+    }
+    .lightbox:target {
+        display: flex;
     }
 </style>
 </head>
 <body>
 
-<!-- Character Portrait -->
-<img src="Vix_DJ.png" alt="Cassandra 'Cassie' Unity Portrait" class="center-image">
+<!-- Character Portrait Thumbnail -->
+<a href="#portrait-lightbox">
+    <img src="Vix_DJ.png" alt="Cassandra 'Cassie' Unity Portrait" class="center-image">
+</a>
+
+<!-- Lightbox Overlay -->
+<div id="portrait-lightbox" class="lightbox" onclick="window.location='#'">
+    <img src="Vix_DJ.png" alt="Cassandra 'Cassie' Unity Full Portrait">
+</div>
 
 <h1>Cassandra "Cassie" Unity <span>— Awakened Shaman / Technomancer</span></h1>
 
@@ -119,7 +154,7 @@
     <h2>Gear & Augmentations</h2>
     <ul>
         <li>Custom commlink with resonance-infused core</li>
-        <li>Fetishes: Phoenix Feather, Fox Ears</li>
+        <li>Fetishes: Phoenix Feather, Fox Mask</li>
         <li>Light pistol (backup)</li>
         <li>Datajack (standard-grade)</li>
         <li>Trodes with shamanic beadwork</li>
