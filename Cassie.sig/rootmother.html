@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Root Mother — A Seasonal Myth‑Cycle</title>
+  <meta name="description" content="An oral-tradition style myth-cycle of the Root Mother, told in spring and autumn turnings." />
+  <meta property="og:title" content="The Root Mother — A Seasonal Myth‑Cycle" />
+  <meta property="og:description" content="An oral-tradition style myth-cycle of the Root Mother, told in spring and autumn turnings." />
+  <meta property="og:type" content="article" />
+  <meta name="color-scheme" content="light dark" />
+  <style>
+    :root {
+      --bg: #0b0b0c;
+      --fg: #e8e8ea;
+      --muted: #b7b7bf;
+      --accent: #7bd389;
+      --accent-2: #b985ea;
+      --card: #141416;
+      --ring: rgba(123, 211, 137, 0.35);
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #fafafa;
+        --fg: #1a1a1f;
+        --muted: #4a4a55;
+        --accent: #2b8a3e;
+        --accent-2: #6f3cc3;
+        --card: #ffffff;
+        --ring: rgba(43, 138, 62, 0.2);
+      }
+    }
+
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      background: radial-gradient(1200px 800px at 20% 0%, rgba(123,211,137,0.06), transparent 50%),
+                  radial-gradient(1200px 800px at 80% 100%, rgba(185,133,234,0.06), transparent 50%),
+                  var(--bg);
+      color: var(--fg);
+      font-family: ui-serif, Charter, "Bitstream Charter", Georgia, Cambria, "Times New Roman", Times, serif;
+      line-height: 1.65;
+      letter-spacing: 0.2px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .wrap {
+      max-width: 72ch;
+      padding: 4rem 1.25rem 6rem;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+    h1 {
+      font-size: clamp(2rem, 3.2vw + 1rem, 3.2rem);
+      line-height: 1.1;
+      margin: 0 0 0.5rem;
+      letter-spacing: 0.5px;
+    }
+    .subtitle {
+      color: var(--muted);
+      font-size: 1.05rem;
+      margin-top: 0.25rem;
+    }
+
+    nav {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 1.25rem auto 2rem;
+    }
+    .chip {
+      display: inline-block;
+      padding: 0.5rem 0.8rem;
+      border-radius: 999px;
+      background: color-mix(in oklab, var(--card), var(--bg) 35%);
+      border: 1px solid color-mix(in oklab, var(--fg), transparent 88%);
+      text-decoration: none;
+      color: var(--fg);
+      font-size: 0.95rem;
+      transition: transform .08s ease, background .2s ease, border-color .2s ease;
+    }
+    .chip:hover { transform: translateY(-1px); border-color: var(--ring); }
+
+    article {
+      background: color-mix(in oklab, var(--card), transparent 10%);
+      border: 1px solid color-mix(in oklab, var(--fg), transparent 88%);
+      border-radius: 18px;
+      padding: 2rem;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.18);
+    }
+    section { margin: 1.75rem 0 2.25rem; }
+
+    h2, h3 { line-height: 1.25; }
+    h2 {
+      font-size: clamp(1.4rem, 1vw + 1.2rem, 2rem);
+      margin: 0 0 1rem;
+    }
+    h3 {
+      font-size: 1.15rem;
+      text-transform: uppercase;
+      letter-spacing: 1.6px;
+      color: var(--muted);
+      margin: 0 0 0.75rem;
+    }
+
+    p { margin: 0 0 1rem; }
+    .lead { font-size: 1.1rem; }
+
+    .rule {
+      height: 1px;
+      border: 0;
+      background: linear-gradient(90deg, transparent, color-mix(in oklab, var(--fg), transparent 80%), transparent);
+      margin: 2rem 0;
+    }
+
+    blockquote {
+      margin: 1rem 0 1.25rem;
+      padding: 0.75rem 1rem;
+      border-left: 3px solid var(--accent);
+      background: color-mix(in oklab, var(--card), transparent 30%);
+      border-radius: 10px;
+    }
+
+    .sig {
+      margin-top: 2rem;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    footer {
+      margin-top: 2.25rem;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      font-variant-caps: all-small-caps;
+      letter-spacing: 1.2px;
+      color: color-mix(in oklab, var(--fg), transparent 35%);
+    }
+
+    .mark {
+      color: var(--accent);
+      font-weight: 600;
+    }
+    .mark-2 { color: var(--accent-2); font-weight: 600; }
+
+    /* Print */
+    @media print {
+      body { background: #fff; color: #000; }
+      .wrap { padding: 0; }
+      nav, footer { display: none; }
+      article { box-shadow: none; border: none; padding: 0; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <h1>The Root Mother</h1>
+      <p class="subtitle">A seasonal myth‑cycle, kept in balance.</p>
+      <nav aria-label="Sections">
+        <a class="chip" href="#spring">Springtelling — The Gentle Face</a>
+        <a class="chip" href="#autumn">Autumntelling — The Dark Face</a>
+        <a class="chip" href="#cycle">The Cycle</a>
+      </nav>
+    </header>
+
+    <article>
+      <section id="spring" aria-labelledby="spring-title">
+        <h3 id="spring-title">Springtelling — The Gentle Face</h3>
+        <p class="lead">This is the story the elders tell when the frost breaks, when the first green spears push through last year’s leaf‑rot, and the air smells like wet earth and promise.</p>
+        <p>Before humans named the trees, before they built the roads, there was the <strong>Root Mother</strong>. She was the deep pulse of the forest, her hair spilling into soil, her voice a tremor in the roots.</p>
+        <p>Every seed knew her touch. Every sprout knew her breath.</p>
+        <p>She did not command; she <em>nourished</em>. Roots whispered secrets to her, and she kept them safe. If you were lost, she wrapped you in green and showed the way home. If you were hungry, she gave you berries and tubers, but always with the promise you would plant something in return.</p>
+        <blockquote><span class="badge"><span class="mark">Law of Spring:</span> Nothing grows alone.</span></blockquote>
+        <p>And so the people learned to tend the earth as they would a child, and the forest grew thick around them like kin.</p>
+      </section>
+
+      <hr class="rule" />
+
+      <section id="autumn" aria-labelledby="autumn-title">
+        <h3 id="autumn-title">Autumntelling — The Dark Face</h3>
+        <p class="lead">This one is told when the leaves turn red, when the wind smells of smoke, and the soil feels restless underfoot.</p>
+        <p>Long after the covenant was made, some forgot her law. They raised walls the roots could not pierce, paved the rivers, stripped the hills, and laughed when the ground cracked beneath them.</p>
+        <p>The Root Mother waited. She always waits.</p>
+        <p>Her roots rose in the night, silent as breath. They wormed through stone foundations, split cobbles, swallowed beams.</p>
+        <p>The first house fell without a sound—its stones already tangled in a net of roots that pulled it under like a fish caught in a dark, patient sea.</p>
+        <p>Then another. And another.</p>
+        <p>Some say they saw her—a vast woman‑shaped shadow, hair like a canopy of leaves, eyes black as fresh soil, smiling with the stillness of someone who has all the time in the world.</p>
+        <p>When the cities were gone, the hollows filled with forest again. Birdsong returned. Mushrooms bloomed where market stalls had once stood.</p>
+        <blockquote><span class="badge"><span class="mark-2">Law of Autumn:</span> The earth remembers. The earth takes back.</span></blockquote>
+      </section>
+
+      <hr class="rule" />
+
+      <section id="cycle" aria-labelledby="cycle-title">
+        <h3 id="cycle-title">The Cycle</h3>
+        <p>In <strong>spring</strong>, they tell her gentle face—so children will learn the joy of planting, and strangers will feel welcome in the forest.</p>
+        <p>In <strong>autumn</strong>, they tell her dark face—so no one forgets what happens when you break the covenant.</p>
+        <p>And in <strong>winter</strong>, they speak neither name aloud. For winter is the time she sleeps deepest, and they will not wake her before the thaw.</p>
+        <p class="sig">— gathered and kept in balance</p>
+      </section>
+    </article>
+
+    <footer>
+      <p>© <span id="y"></span> • Root Mother myth‑cycle. Share with care; keep the balance.</p>
+    </footer>
+  </main>
+
+  <script>
+    // just set the year
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
