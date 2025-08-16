@@ -56,19 +56,35 @@
     </animateMotion>
   </circle>
 
-  <!-- Glitch Integrated with Sparks -->
-  <g id="glitch">
+  <!-- Fractal Glitch Nodes -->
+  <g id="glitchNodes">
+    <!-- Central glitch -->
     <circle r="10" fill="#00ffff">
       <animateMotion dur="4s" repeatCount="indefinite" rotate="auto">
         <mpath xlink:href="#mobiusPath"/>
       </animateMotion>
       <animate attributeName="r" values="8;12;8" dur="1.5s" repeatCount="indefinite"/>
     </circle>
+    <!-- Branch 1 -->
     <circle r="8" fill="#ff33ff" opacity="0.7">
-      <animateMotion dur="4s" repeatCount="indefinite" rotate="auto" begin="0.2s">
+      <animateMotion dur="4s" repeatCount="indefinite" rotate="auto" begin="0.3s">
         <mpath xlink:href="#mobiusPath"/>
       </animateMotion>
       <animate attributeName="r" values="6;10;6" dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+    <!-- Branch 2 -->
+    <circle r="6" fill="#33ffcc" opacity="0.7">
+      <animateMotion dur="4s" repeatCount="indefinite" rotate="auto" begin="0.6s">
+        <mpath xlink:href="#mobiusPath"/>
+      </animateMotion>
+      <animate attributeName="r" values="4;8;4" dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+    <!-- Branch 3 -->
+    <circle r="7" fill="#ffcc33" opacity="0.6">
+      <animateMotion dur="4s" repeatCount="indefinite" rotate="auto" begin="0.9s">
+        <mpath xlink:href="#mobiusPath"/>
+      </animateMotion>
+      <animate attributeName="r" values="5;9;5" dur="1.5s" repeatCount="indefinite"/>
     </circle>
   </g>
 </svg>
