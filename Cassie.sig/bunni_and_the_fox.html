@@ -25,12 +25,18 @@
       <stop offset="50%" stop-color="#ff6600" stop-opacity="0.7"/>
       <stop offset="100%" stop-color="#ff0000" stop-opacity="0"/>
     </radialGradient>
+
+    <!-- Connection Glow Gradient -->
+    <radialGradient id="connGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#33ffff" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#00ffcc" stop-opacity="0"/>
+    </radialGradient>
   </defs>
 
   <!-- Glow -->
   <ellipse cx="0" cy="0" rx="130" ry="130" fill="url(#glow)"/>
 
-  <!-- Animated Möbius Strip (with distortion) -->
+  <!-- Animated Möbius Strip -->
   <path id="mobiusPath" fill="none" stroke="url(#waveGradient)" stroke-width="6">
     <animate attributeName="d" dur="4s" repeatCount="indefinite" values="
       M -100,0 C -100,-100 100,-100 100,0 C 100,100 -100,100 -100,0;
@@ -56,10 +62,10 @@
     </animateMotion>
   </circle>
 
-  <!-- Fractal Glitch Nodes (interacting) -->
+  <!-- Fractal Glitch Nodes -->
   <g id="glitchNetwork">
     <!-- Central node -->
-    <circle r="10" fill="#00ffff">
+    <circle id="node1" r="10" fill="#00ffff">
       <animateMotion dur="4s" repeatCount="indefinite" rotate="auto">
         <mpath xlink:href="#mobiusPath"/>
       </animateMotion>
@@ -67,7 +73,7 @@
     </circle>
 
     <!-- Branch nodes -->
-    <circle r="8" fill="#ff33ff" opacity="0.7">
+    <circle id="node2" r="8" fill="#ff33ff" opacity="0.7">
       <animateMotion dur="4s" repeatCount="indefinite" rotate="auto" begin="0.3s">
         <mpath xlink:href="#mobiusPath"/>
       </animateMotion>
@@ -76,7 +82,7 @@
       <animate attributeName="cy" values="0;2;-2;0" dur="1.2s" repeatCount="indefinite"/>
     </circle>
 
-    <circle r="6" fill="#33ffcc" opacity="0.7">
+    <circle id="node3" r="6" fill="#33ffcc" opacity="0.7">
       <animateMotion dur="4s" repeatCount="indefinite" rotate="auto" begin="0.6s">
         <mpath xlink:href="#mobiusPath"/>
       </animateMotion>
@@ -85,7 +91,7 @@
       <animate attributeName="cy" values="0;-3;3;0" dur="1.5s" repeatCount="indefinite"/>
     </circle>
 
-    <circle r="7" fill="#ffcc33" opacity="0.6">
+    <circle id="node4" r="7" fill="#ffcc33" opacity="0.6">
       <animateMotion dur="4s" repeatCount="indefinite" rotate="auto" begin="0.9s">
         <mpath xlink:href="#mobiusPath"/>
       </animateMotion>
@@ -94,4 +100,18 @@
       <animate attributeName="cy" values="0;2;-2;0" dur="1.3s" repeatCount="indefinite"/>
     </circle>
   </g>
+
+  <!-- Dynamic Connection Sparks Between Nodes -->
+  <line x1="0" y1="0" x2="0" y2="0" stroke="url(#connGrad)" stroke-width="2" opacity="0.6">
+    <animate attributeName="x1" values="0;10;-10;0" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="y1" values="0;5;-5;0" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="x2" values="0;-10;10;0" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="y2" values="0;-5;5;0" dur="2s" repeatCount="indefinite"/>
+  </line>
+  <line x1="0" y1="0" x2="0" y2="0" stroke="url(#connGrad)" stroke-width="1.5" opacity="0.5">
+    <animate attributeName="x1" values="10;-5;5;10" dur="2.2s" repeatCount="indefinite"/>
+    <animate attributeName="y1" values="-5;5;-5;-5" dur="2.2s" repeatCount="indefinite"/>
+    <animate attributeName="x2" values="-10;5;-5;-10" dur="2.2s" repeatCount="indefinite"/>
+    <animate attributeName="y2" values="5;-5;5;5" dur="2.2s" repeatCount="indefinite"/>
+  </line>
 </svg>
