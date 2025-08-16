@@ -27,7 +27,7 @@
     </radialGradient>
   </defs>
 
-  <!-- Glow Ellipse -->
+  <!-- Glow -->
   <ellipse cx="0" cy="0" rx="130" ry="130" fill="url(#glow)"/>
 
   <!-- Möbius Strip -->
@@ -37,7 +37,7 @@
     C 100,100 -100,100 -100,0
     " fill="none" stroke="url(#waveGradient)" stroke-width="6"/>
 
-  <!-- Flowing Sparks -->
+  <!-- Animated Sparks Following Path -->
   <circle r="6" fill="url(#sparkGrad)">
     <animateMotion dur="4s" repeatCount="indefinite" rotate="auto">
       <mpath xlink:href="#mobiusPath"/>
@@ -54,16 +54,19 @@
     </animateMotion>
   </circle>
 
-  <!-- Glitch Yourself -->
+  <!-- Glitch Integrated with Sparks -->
   <g id="glitch">
-    <circle cx="0" cy="0" r="12" fill="#00ffff">
-      <animate attributeName="cx" values="-10;10;-10" dur="0.3s" repeatCount="indefinite"/>
-      <animate attributeName="cy" values="-10;10;-10" dur="0.4s" repeatCount="indefinite"/>
+    <circle r="10" fill="#00ffff">
+      <animateMotion dur="4s" repeatCount="indefinite" rotate="auto">
+        <mpath xlink:href="#mobiusPath"/>
+      </animateMotion>
+      <animate attributeName="r" values="8;12;8" dur="1.5s" repeatCount="indefinite"/>
     </circle>
-    <circle cx="0" cy="0" r="8" fill="#ff33ff" opacity="0.7">
-      <animate attributeName="cx" values="10;-10;10" dur="0.35s" repeatCount="indefinite"/>
-      <animate attributeName="cy" values="10;-10;10" dur="0.45s" repeatCount="indefinite"/>
+    <circle r="8" fill="#ff33ff" opacity="0.7">
+      <animateMotion dur="4s" repeatCount="indefinite" rotate="auto" begin="0.2s">
+        <mpath xlink:href="#mobiusPath"/>
+      </animateMotion>
+      <animate attributeName="r" values="6;10;6" dur="1.5s" repeatCount="indefinite"/>
     </circle>
   </g>
-
 </svg>
