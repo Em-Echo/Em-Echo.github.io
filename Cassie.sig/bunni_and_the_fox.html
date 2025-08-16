@@ -30,12 +30,14 @@
   <!-- Glow -->
   <ellipse cx="0" cy="0" rx="130" ry="130" fill="url(#glow)"/>
 
-  <!-- Möbius Strip -->
-  <path id="mobiusPath" d="
-    M -100,0
-    C -100,-100 100,-100 100,0
-    C 100,100 -100,100 -100,0
-    " fill="none" stroke="url(#waveGradient)" stroke-width="6"/>
+  <!-- Animated Möbius Strip (with distortion) -->
+  <path id="mobiusPath" fill="none" stroke="url(#waveGradient)" stroke-width="6">
+    <animate attributeName="d" dur="4s" repeatCount="indefinite" values="
+      M -100,0 C -100,-100 100,-100 100,0 C 100,100 -100,100 -100,0;
+      M -100,0 C -90,-110 110,-90 100,0 C 90,110 -110,90 -100,0;
+      M -100,0 C -100,-100 100,-100 100,0 C 100,100 -100,100 -100,0
+    "/>
+  </path>
 
   <!-- Animated Sparks Following Path -->
   <circle r="6" fill="url(#sparkGrad)">
