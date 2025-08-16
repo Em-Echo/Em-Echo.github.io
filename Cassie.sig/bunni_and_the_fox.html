@@ -2,8 +2,15 @@
   <!-- Background -->
   <rect width="400" height="400" x="-200" y="-200" fill="#111"/>
 
-  <!-- Gradient for strip -->
+  <!-- Glow behind Möbius -->
   <defs>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff9900" stop-opacity="0.4"/>
+      <stop offset="70%" stop-color="#ff3300" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Möbius Gradient -->
     <linearGradient id="waveGradient" x1="-100" y1="0" x2="100" y2="0" gradientUnits="userSpaceOnUse">
       <stop offset="0%" stop-color="#ff66cc"/>
       <stop offset="50%" stop-color="#ff9900"/>
@@ -12,13 +19,16 @@
       <animate attributeName="x2" values="100;-100;100" dur="4s" repeatCount="indefinite" />
     </linearGradient>
 
-    <!-- Flowing fire spark -->
+    <!-- Spark Gradient -->
     <radialGradient id="sparkGrad" cx="50%" cy="50%" r="50%">
       <stop offset="0%" stop-color="#ffff33" stop-opacity="1"/>
       <stop offset="50%" stop-color="#ff6600" stop-opacity="0.7"/>
       <stop offset="100%" stop-color="#ff0000" stop-opacity="0"/>
     </radialGradient>
   </defs>
+
+  <!-- Glow Ellipse -->
+  <ellipse cx="0" cy="0" rx="130" ry="130" fill="url(#glow)"/>
 
   <!-- Möbius Strip -->
   <path d="
@@ -44,10 +54,8 @@
     </animateMotion>
   </circle>
 
-  <!-- Path definition for sparks -->
+  <!-- Path for sparks -->
   <path id="mobiusPath" d="
     M -100,0
     C -100,-100 100,-100 100,0
-    C 100,100 -100,100 -100,0
-    " fill="none"/>
-</svg>
+    C 1
