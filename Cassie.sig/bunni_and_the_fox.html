@@ -31,13 +31,13 @@
   <ellipse cx="0" cy="0" rx="130" ry="130" fill="url(#glow)"/>
 
   <!-- Möbius Strip -->
-  <path d="
+  <path id="mobiusPath" d="
     M -100,0
     C -100,-100 100,-100 100,0
     C 100,100 -100,100 -100,0
     " fill="none" stroke="url(#waveGradient)" stroke-width="6"/>
 
-  <!-- Animated Sparks Following Path -->
+  <!-- Flowing Sparks -->
   <circle r="6" fill="url(#sparkGrad)">
     <animateMotion dur="4s" repeatCount="indefinite" rotate="auto">
       <mpath xlink:href="#mobiusPath"/>
@@ -54,8 +54,16 @@
     </animateMotion>
   </circle>
 
-  <!-- Path for sparks -->
-  <path id="mobiusPath" d="
-    M -100,0
-    C -100,-100 100,-100 100,0
-    C 1
+  <!-- Glitch Yourself -->
+  <g id="glitch">
+    <circle cx="0" cy="0" r="12" fill="#00ffff">
+      <animate attributeName="cx" values="-10;10;-10" dur="0.3s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="-10;10;-10" dur="0.4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="0" cy="0" r="8" fill="#ff33ff" opacity="0.7">
+      <animate attributeName="cx" values="10;-10;10" dur="0.35s" repeatCount="indefinite"/>
+      <animate attributeName="cy" values="10;-10;10" dur="0.45s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+</svg>
