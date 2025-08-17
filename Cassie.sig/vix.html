@@ -12,11 +12,16 @@
     </radialGradient>
   </defs>
 
-  <!-- Glow behind circle -->
-  <circle cx="100" cy="100" r="55" fill="url(#circleGlow)" />
+  <!-- Glow behind circle with pulse -->
+  <circle cx="100" cy="100" r="55" fill="url(#circleGlow)">
+    <animate attributeName="r" values="55;60;55" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.4;0.6;0.4" dur="2s" repeatCount="indefinite"/>
+  </circle>
 
-  <!-- Base circle -->
-  <circle cx="100" cy="100" r="50" stroke="black" stroke-width="4" fill="none"/>
+  <!-- Base circle with pulse -->
+  <circle cx="100" cy="100" r="50" stroke="black" stroke-width="4" fill="none">
+    <animate attributeName="r" values="50;52;50" dur="2s" repeatCount="indefinite"/>
+  </circle>
   
   <!-- Fox ears -->
   <polygon points="70,50 85,20 100,50" fill="black"/>
