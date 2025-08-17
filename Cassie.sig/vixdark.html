@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" style="background:black;">
+  <defs>
+    <!-- Tail gradient for dark background -->
+    <linearGradient id="tailGradientDark" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFAA00" />
+      <stop offset="100%" stop-color="#FFFF66" />
+    </linearGradient>
+    <!-- Tail shimmer -->
+    <linearGradient id="shimmerDark" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="white" stop-opacity="0"/>
+      <stop offset="50%" stop-color="white" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="white" stop-opacity="0"/>
+    </linearGradient>
+    <!-- Circle glow for dark background -->
+    <radialGradient id="circleGlowDark" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFDDAA" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#FFDDAA" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Glow behind circle with pulse -->
+  <circle cx="100" cy="100" r="55" fill="url(#circleGlowDark)">
+    <animate attributeName="r" values="55;60;55" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.6;0.8;0.6" dur="2s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Base circle with pulse -->
+  <circle cx="100" cy="100" r="50" stroke="white" stroke-width="4" fill="none">
+    <animate attributeName="r" values="50;52;50" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Fox ears -->
+  <polygon points="70,50 85,20 100,50" fill="white"/>
+  <polygon points="130,50 115,20 100,50" fill="white"/>
+  
+  <!-- Dynamic tail flicks with gradient and sway animation -->
+  <path d="M100,150 C90,165 75,185 95,195" stroke="url(#tailGradientDark)" stroke-width="4" fill="none">
+    <animate attributeName="d" dur="2s" repeatCount="indefinite"
+      values="
+        M100,150 C90,165 75,185 95,195;
+        M100,150 C92,167 78,183 97,193;
+        M100,150 C90,165 75,185 95,195
+      " />
+  </path>
+  <path d="M100,150 C100,175 125,190 130,165" stroke="url(#tailGradientDark)" stroke-width="4" fill="none">
+    <animate attributeName="d" dur="2.5s" repeatCount="indefinite"
+      values="
+        M100,150 C100,175 125,190 130,165;
+        M100,150 C102,177 123,188 132,163;
+        M100,150 C100,175 125,190 130,165
+      " />
+  </path>
+  <path d="M100,150 C110,165 125,185 140,175" stroke="url(#tailGradientDark)" stroke-width="4" fill="none">
+    <animate attributeName="d" dur="3s" repeatCount="indefinite"
+      values="
+        M100,150 C110,165 125,185 140,175;
+        M100,150 C112,167 127,183 138,173;
+        M100,150 C110,165 125,185 140,175
+      " />
+  </path>
+  
+  <!-- Tail shimmer overlay -->
+  <path d="M100,150 C90,165 75,185 95,195" stroke="url(#shimmerDark)" stroke-width="2" fill="none">
+    <animate attributeName="stroke-dashoffset" from="0" to="100" dur="1.5s" repeatCount="indefinite"/>
+  </path>
+  <path d="M100,150 C100,175 125,190 130,165" stroke="url(#shimmerDark)" stroke-width="2" fill="none">
+    <animate attributeName="stroke-dashoffset" from="0" to="100" dur="1.8s" repeatCount="indefinite"/>
+  </path>
+  <path d="M100,150 C110,165 125,185 140,175" stroke="url(#shimmerDark)" stroke-width="2" fill="none">
+    <animate attributeName="stroke-dashoffset" from="0" to="100" dur="2s" repeatCount="indefinite"/>
+  </path>
+  
+  <!-- Mischievous eye -->
+  <circle cx="115" cy="95" r="5" fill="white"/>
+</svg>
