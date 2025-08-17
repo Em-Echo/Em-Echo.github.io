@@ -1,0 +1,85 @@
+<svg width="1024" height="512" viewBox="0 0 1024 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1024" height="512" fill="#1a1a1a" />
+
+  <!-- Layer Gradients -->
+  <defs>
+    <linearGradient id="bassGradient" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ff4c4c" />
+      <stop offset="100%" stop-color="#ff0000" />
+    </linearGradient>
+    <linearGradient id="synthGradient" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4cff4c" />
+      <stop offset="100%" stop-color="#00ff00" />
+    </linearGradient>
+    <linearGradient id="guitarGradient" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4c4cff" />
+      <stop offset="100%" stop-color="#0000ff" />
+    </linearGradient>
+    <linearGradient id="saxGradient" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#b84cff" />
+      <stop offset="100%" stop-color="#8000ff" />
+    </linearGradient>
+    <linearGradient id="vocalsGradient" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffff4c" />
+      <stop offset="100%" stop-color="#ffff00" />
+    </linearGradient>
+  </defs>
+
+  <!-- Time axis -->
+  <line x1="50" y1="500" x2="974" y2="500" stroke="#cccccc" stroke-width="2" />
+  <text x="50" y="520" fill="#cccccc" font-size="12">0:00</text>
+  <text x="974" y="520" fill="#cccccc" font-size="12" text-anchor="end">5:46</text>
+
+  <!-- Section labels -->
+  <text x="100" y="490" fill="#ffffff" font-size="12">Verse 1</text>
+  <text x="250" y="490" fill="#ffffff" font-size="12">Pre-Chorus 1</text>
+  <text x="400" y="490" fill="#ffffff" font-size="12">Chorus 1</text>
+  <text x="550" y="490" fill="#ffffff" font-size="12">Verse 2</text>
+  <text x="700" y="490" fill="#ffffff" font-size="12">Bridge</text>
+  <text x="850" y="490" fill="#ffffff" font-size="12">Sax Solo / Chorus</text>
+
+  <!-- Animated Intensity Overlay -->
+  <polyline points="50,480 120,450 200,430 280,380 360,430 440,360 520,400 600,420 680,300 760,320 840,260 920,380" 
+            fill="none" stroke="#ffcc00" stroke-width="3">
+    <animate attributeName="stroke-width" values="3;6;3" dur="5.46s" repeatCount="indefinite" />
+  </polyline>
+
+  <!-- Layer bars with animation -->
+  <!-- Bass -->
+  <rect x="50" y="400" width="70" height="20" fill="url(#bassGradient)">
+    <animate attributeName="height" values="20;30;20" dur="5.46s" repeatCount="indefinite" />
+  </rect>
+  <rect x="120" y="370" width="80" height="30" fill="url(#bassGradient)">
+    <animate attributeName="height" values="30;40;30" dur="5.46s" repeatCount="indefinite" />
+  </rect>
+
+  <!-- Synth -->
+  <rect x="50" y="380" width="70" height="15" fill="url(#synthGradient)">
+    <animate attributeName="height" values="15;25;15" dur="5.46s" repeatCount="indefinite" />
+  </rect>
+  <rect x="120" y="350" width="80" height="25" fill="url(#synthGradient)">
+    <animate attributeName="height" values="25;35;25" dur="5.46s" repeatCount="indefinite" />
+  </rect>
+
+  <!-- Guitar -->
+  <rect x="50" y="360" width="70" height="10" fill="url(#guitarGradient)">
+    <animate attributeName="height" values="10;20;10" dur="5.46s" repeatCount="indefinite" />
+  </rect>
+
+  <!-- Saxophone -->
+  <rect x="50" y="340" width="70" height="10" fill="url(#saxGradient)">
+    <animate attributeName="height" values="10;20;10" dur="5.46s" repeatCount="indefinite" />
+  </rect>
+
+  <!-- Vocals -->
+  <rect x="50" y="320" width="70" height="15" fill="url(#vocalsGradient)">
+    <animate attributeName="height" values="15;25;15" dur="5.46s" repeatCount="indefinite" />
+  </rect>
+
+  <!-- Cascade spike highlight -->
+  <rect x="840" y="200" width="80" height="80" fill="none" stroke="#ff00ff" stroke-width="4" stroke-dasharray="10,5">
+    <animate attributeName="stroke-width" values="4;8;4" dur="5.46s" repeatCount="indefinite" />
+  </rect>
+  <text x="880" y="190" fill="#ff00ff" font-size="14" text-anchor="middle">Cascade Peak</text>
+</svg>
