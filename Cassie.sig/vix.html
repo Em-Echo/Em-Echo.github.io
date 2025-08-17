@@ -22,10 +22,33 @@
   <polygon points="70,50 85,20 100,50" fill="black"/>
   <polygon points="130,50 115,20 100,50" fill="black"/>
   
-  <!-- Dynamic tail flicks with gradient -->
-  <path d="M100,150 C90,165 75,185 95,195" stroke="url(#tailGradient)" stroke-width="4" fill="none"/>
-  <path d="M100,150 C100,175 125,190 130,165" stroke="url(#tailGradient)" stroke-width="4" fill="none"/>
-  <path d="M100,150 C110,165 125,185 140,175" stroke="url(#tailGradient)" stroke-width="4" fill="none"/>
+  <!-- Dynamic tail flicks with gradient and sway animation -->
+  <path d="M100,150 C90,165 75,185 95,195" stroke="url(#tailGradient)" stroke-width="4" fill="none">
+    <animate attributeName="d" dur="2s" repeatCount="indefinite"
+      values="
+        M100,150 C90,165 75,185 95,195;
+        M100,150 C92,167 78,183 97,193;
+        M100,150 C90,165 75,185 95,195
+      " />
+  </path>
+  
+  <path d="M100,150 C100,175 125,190 130,165" stroke="url(#tailGradient)" stroke-width="4" fill="none">
+    <animate attributeName="d" dur="2.5s" repeatCount="indefinite"
+      values="
+        M100,150 C100,175 125,190 130,165;
+        M100,150 C102,177 123,188 132,163;
+        M100,150 C100,175 125,190 130,165
+      " />
+  </path>
+  
+  <path d="M100,150 C110,165 125,185 140,175" stroke="url(#tailGradient)" stroke-width="4" fill="none">
+    <animate attributeName="d" dur="3s" repeatCount="indefinite"
+      values="
+        M100,150 C110,165 125,185 140,175;
+        M100,150 C112,167 127,183 138,173;
+        M100,150 C110,165 125,185 140,175
+      " />
+  </path>
   
   <!-- Mischievous eye -->
   <circle cx="115" cy="95" r="5" fill="black"/>
