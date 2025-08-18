@@ -1,85 +1,56 @@
-<svg width="1024" height="600" viewBox="0 0 1024 600" xmlns="http://www.w3.org/2000/svg">
+<svg width="1200" height="600" xmlns="http://www.w3.org/2000/svg">
   <!-- Background -->
-  <rect width="1024" height="600" fill="#111111" />
+  <rect width="1200" height="600" fill="#111"/>
 
-  <!-- Core Arcs / Bass Lines (Story Network 1) -->
-  <rect x="50" y="500" width="70" height="20" fill="#ff4c4c">
-    <animate attributeName="height" values="20;40;20" dur="6s" repeatCount="indefinite" />
+  <!-- Story Network 1 -->
+  <rect x="50" y="500" width="1100" height="20" fill="red">
+    <animate attributeName="height" values="20;50;20" dur="4.3s" repeatCount="indefinite"/>
+    <animate attributeName="y" values="500;470;500" dur="4.3s" repeatCount="indefinite"/>
   </rect>
-  <rect x="150" y="480" width="70" height="40" fill="#ff4c4c">
-    <animate attributeName="height" values="40;60;40" dur="6s" repeatCount="indefinite" />
-  </rect>
-
-  <!-- Core Arcs / Bass Lines (Story Network 2) -->
-  <rect x="100" y="520" width="60" height="15" fill="#ff994c">
-    <animate attributeName="height" values="15;35;15" dur="6s" repeatCount="indefinite" />
-  </rect>
-  <rect x="180" y="500" width="60" height="25" fill="#ff994c">
-    <animate attributeName="height" values="25;45;25" dur="6s" repeatCount="indefinite" />
+  <rect x="50" y="450" width="1100" height="10" fill="yellow">
+    <animate attributeName="height" values="10;30;10" dur="1.4s" repeatCount="indefinite"/>
+    <animate attributeName="y" values="450;430;450" dur="1.4s" repeatCount="indefinite"/>
   </rect>
 
-  <!-- Resonance Keys / Percussive Triggers (Network 1) -->
-  <circle cx="100" cy="450" r="10" fill="#ffff4c">
-    <animate attributeName="r" values="10;20;10" dur="1.2s" repeatCount="indefinite" />
-  </circle>
-  <circle cx="200" cy="430" r="10" fill="#ffff4c">
-    <animate attributeName="r" values="10;20;10" dur="1.2s" repeatCount="indefinite" />
-  </circle>
-
-  <!-- Resonance Keys / Percussive Triggers (Network 2) -->
-  <circle cx="150" cy="460" r="8" fill="#ffcc4c">
-    <animate attributeName="r" values="8;16;8" dur="1.2s" repeatCount="indefinite" />
-  </circle>
-  <circle cx="230" cy="440" r="8" fill="#ffcc4c">
-    <animate attributeName="r" values="8;16;8" dur="1.2s" repeatCount="indefinite" />
-  </circle>
-
-  <!-- Observational Feedback / Synth Waves (Network 1) -->
-  <rect x="50" y="400" width="70" height="10" fill="#4cff4c">
-    <animate attributeName="height" values="10;30;10" dur="6s" repeatCount="indefinite" />
+  <!-- Story Network 2 -->
+  <rect x="50" y="480" width="1100" height="18" fill="orange">
+    <animate attributeName="height" values="18;45;18" dur="3.5s" repeatCount="indefinite"/>
+    <animate attributeName="y" values="480;455;480" dur="3.5s" repeatCount="indefinite"/>
   </rect>
-  <rect x="150" y="380" width="70" height="20" fill="#4cff4c">
-    <animate attributeName="height" values="20;40;20" dur="6s" repeatCount="indefinite" />
+  <rect x="50" y="430" width="1100" height="12" fill="#ffff66">
+    <animate attributeName="height" values="12;35;12" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="y" values="430;408;430" dur="2s" repeatCount="indefinite"/>
   </rect>
 
-  <!-- Observational Feedback / Synth Waves (Network 2) -->
-  <rect x="120" y="420" width="60" height="10" fill="#4cff99">
-    <animate attributeName="height" values="10;25;10" dur="6s" repeatCount="indefinite" />
+  <!-- Story Network 3 -->
+  <rect x="50" y="460" width="1100" height="16" fill="magenta">
+    <animate attributeName="height" values="16;40;16" dur="4s" repeatCount="indefinite"/>
+    <animate attributeName="y" values="460;435;460" dur="4s" repeatCount="indefinite"/>
   </rect>
-  <rect x="200" y="400" width="60" height="15" fill="#4cff99">
-    <animate attributeName="height" values="15;30;15" dur="6s" repeatCount="indefinite" />
-  </rect>
-
-  <!-- Ripple Modulation / Guitar Syncopations (Network 1) -->
-  <rect x="300" y="400" width="50" height="10" fill="#4c4cff">
-    <animate attributeName="height" values="10;25;10" dur="6s" repeatCount="indefinite" />
-  </rect>
-  <rect x="360" y="380" width="50" height="15" fill="#4c4cff">
-    <animate attributeName="height" values="15;30;15" dur="6s" repeatCount="indefinite" />
+  <rect x="50" y="410" width="1100" height="10" fill="pink">
+    <animate attributeName="height" values="10;28;10" dur="1.8s" repeatCount="indefinite"/>
+    <animate attributeName="y" values="410;390;410" dur="1.8s" repeatCount="indefinite"/>
   </rect>
 
-  <!-- Ripple Modulation / Guitar Syncopations (Network 2) -->
-  <rect x="320" y="420" width="40" height="10" fill="#994cff">
-    <animate attributeName="height" values="10;20;10" dur="6s" repeatCount="indefinite" />
-  </rect>
-  <rect x="370" y="400" width="40" height="12" fill="#994cff">
-    <animate attributeName="height" values="12;25;12" dur="6s" repeatCount="indefinite" />
+  <!-- Ripple Modulation / Jagged Synths -->
+  <rect x="50" y="350" width="1100" height="12" fill="blue">
+    <animate attributeName="height" values="12;35;12" dur="2.2s" repeatCount="indefinite"/>
+    <animate attributeName="y" values="350;325;350" dur="2.2s" repeatCount="indefinite"/>
   </rect>
 
-  <!-- Safety Layer Envelope / Reverb -->
-  <ellipse cx="512" cy="300" rx="500" ry="250" fill="none" stroke="#888888" stroke-width="3">
-    <animate attributeName="stroke-width" values="3;6;3" dur="6s" repeatCount="indefinite" />
-  </ellipse>
-
-  <!-- Scaling Gradient / Crescendo -->
-  <polyline points="50,500 150,480 300,400 360,380 500,350 650,300 800,250 900,220" 
-            fill="none" stroke="#ffcc00" stroke-width="3">
-    <animate attributeName="stroke-width" values="3;6;3" dur="6s" repeatCount="indefinite" />
-  </polyline>
-
-  <!-- Cascade Spike / Sax Solo -->
-  <rect x="850" y="200" width="80" height="80" fill="none" stroke="#ff00ff" stroke-width="4" stroke-dasharray="10,5">
-    <animate attributeName="stroke-width" values="4;8;4" dur="6s" repeatCount="indefinite" />
+  <!-- Sax Solo / Cascade Peak -->
+  <rect x="50" y="300" width="1100" height="18" fill="purple">
+    <animate attributeName="height" values="18;55;18" dur="5s" repeatCount="indefinite"/>
+    <animate attributeName="y" values="300;265;300" dur="5s" repeatCount="indefinite"/>
   </rect>
-  <text x="890" y="190" fill="#ff00ff" font-size="14" text-anchor="middle">Cascade Peak / Sax</text>
+
+  <!-- Overall Intensity Overlay -->
+  <rect x="50" y="50" width="1100" height="20" fill="white" opacity="0.3">
+    <animate attributeName="opacity" values="0.1;0.8;0.1" dur="4.3s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Section Labels -->
+  <text x="50" y="580" fill="white" font-size="14">
+    Intro | Verse 1 | Pre-Chorus | Chorus | Verse 2 | Pre-Chorus | Chorus | Bridge | Sax Solo / Cascade | Outro
+  </text>
 </svg>
