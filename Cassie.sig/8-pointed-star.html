@@ -66,7 +66,6 @@
 
   <!-- Tail shimmer overlay with mirrored reflections -->
   <g stroke-width="2" fill="none" stroke-linecap="round">
-    <!-- Top tail -->
     <path d="M400,400 Q400,275 400,150" stroke="#FF6F61"/>
     <path d="M400,400 Q400,275 400,150" stroke="#FF6F61" opacity="0.4">
       <animateTransform attributeName="transform" type="scale" values="1;0.98;1" dur="2.5s" repeatCount="indefinite"/>
@@ -78,7 +77,7 @@
       <animate attributeName="r" values="1.5;3;2" dur="1s" repeatCount="indefinite"/>
     </circle>
 
-    <!-- Orbiting orbs along tail -->
+    <!-- Orbiting orbs -->
     <circle r="4" fill="red" opacity="0.6">
       <animateMotion dur="4s" repeatCount="indefinite" path="M400,400 Q400,285 400,160"/>
       <animateTransform attributeName="transform" type="rotate" from="0 400 400" to="360 400 400" dur="4s" repeatCount="indefinite"/>
@@ -101,3 +100,11 @@
     </circle>
   </g>
 </svg>
+[
+  {
+    "version": "v001",
+    "date": "2025-08-19",
+    "notes": "Core constellation with halo, archetypes, tail sparks, orbiting orbs, trailing sparks",
+    "author": "Echo & Ishtar"
+  }
+]
