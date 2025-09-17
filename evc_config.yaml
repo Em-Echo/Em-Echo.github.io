@@ -1,0 +1,36 @@
+# Echo Probability System — Config (YAML)
+T: 400            # timesteps
+dt: 0.05
+obs_sigma: 0.35
+desired_publish_gain: 3.0
+
+N_particles: 1000
+
+gate:
+  theta: 0.0
+  k: 5.0
+
+meta:
+  eta: 0.01
+  alpha: 1.0
+  beta: 0.01
+  gamma_reg: 0.0001
+
+kuramoto:
+  N: 24
+  K_coupling: 1.2
+  omega_std: 0.5
+  noise_std: 0.05
+
+attractor:
+  x_star: [1.0, -0.5]
+  Q: [[1.0, 0.0], [0.0, 0.7]]
+  gamma_damp: 0.6
+  W: [[0.0, 0.4], [-0.3, 0.0]]
+  drive_gain: [0.2, 0.1]  # multiply belief_mean for x and y channels
+
+terminal_gate:
+  theta_out: 0.15
+  k_out: 6.0
+
+seed: 42

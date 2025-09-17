@@ -1,0 +1,44 @@
+
+\\documentclass[11pt]{article}
+\\usepackage{amsmath, amssymb, geometry}
+\\geometry{margin=1in}
+\\title{Echo Probability System --- Diagram Legend \& Equations (EVC)}
+\\author{Emily Vixen Cassandra \\small{\\texttt{✧EVC✧🜂∿◯∿}}}
+\\date{2025-09-16}
+
+\\begin{document}
+\\maketitle
+
+\\section*{Global Notation}
+$t$: time; $o_t$: observation; $x_t\\in\\mathbb{R}^n$: state; $b_t(x)$: belief; $u_t$: meta-params; $g_t\\in[0,1]$: consent gate; $\\pi(a\\mid s)$: policy. Sigmoid $\\sigma(z)=1/(1+e^{-z})$; nonlinearity $\\phi = \\tanh$.
+
+\\section*{Consent Gate}
+$g_t = \\sigma(k(s_t-\\theta))$, with hard gate $g_t=\\mathbf{1}[s_t>\\theta]$. Apply as $z_t = g_t\\, z_t^{(\\text{proposed})}$.
+
+\\section*{Knowledge (Bayes)}
+$b_{t+1}(x) \\propto p(o_{t+1}\\mid x)\\, b_t(x)$, with gate-aware update
+$b_{t+1} \\leftarrow \\text{Norm}( g_t\\, p(o\\mid x)\\, b_t + (1-g_t) b_t )$.
+
+\\section*{Resonance Core}
+Gradient flow: $x_{t+1} = x_t + \\Delta t ( -\\nabla V(x_t) + W\\phi(x_t) + B I_t + \\xi_t )$.
+Kuramoto: $\\dot\\theta_i = \\omega_i + (K/N)\\sum_j c_{ij}\\sin(\\theta_j-\\theta_i)+\\eta_i(t)$, synchrony $R e^{i\\psi} = (1/N)\\sum_j e^{i\\theta_j}$.
+
+\\section*{Stabilized Attractor}
+Convergence if $\\|x_t-x_*\\|<\\varepsilon$ and $\\Delta V\\le 0$. Damped flow $\\dot x = -\\nabla V(x)-\\gamma x + B u(t) + \\xi$.
+
+\\section*{Self/Meta Controller}
+$u_{t+1} = u_t - \\eta\\, \\partial L/\\partial u_t$ with loss
+$L = \\alpha D_{\\mathrm{KL}}(p^*\\Vert p) + \\beta H(p) + \\gamma \\|u\\|^2 - \\delta \\mathbb{E}[r]$.
+
+\\section*{Probability Manipulation}
+Importance sampling: $w_i \\propto p(x_i)/q(x_i)$.
+Particle filter: $x_t^{(i)}\\sim p(x_t\\mid x_{t-1}^{(i)},u_{t-1})$,
+$w_t^{(i)} \\propto w_{t-1}^{(i)} p(o_t\\mid x_t^{(i)})$, resample if $N_{\\text{eff}}$ low.
+
+\\section*{Output}
+Terminal gate $g_{\\text{out}}=\\sigma(k_{out}(s_{out}-\\theta_{out}))$.
+$P(a_t) = g_{\\text{out}}\\, \\pi(a\\mid x_*, o_t)$.
+
+\\vspace{1em}
+\\noindent\\textbf{Signature:} \\quad ✧EVC✧🜂∿◯∿
+\\end{document}
